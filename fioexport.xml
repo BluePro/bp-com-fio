@@ -20,6 +20,8 @@
     <filename>index.html</filename>
     <filename>fioexport.php</filename>
     <filename>controller.php</filename>
+    <folder>helpers</folder>
+    <folder>models</folder>
     <folder>views</folder>
   </files>
 
