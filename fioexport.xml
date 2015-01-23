@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+  <name>Fio export</name>
+  <creationDate>2015-01-23</creationDate>
+  <author>Ondřej Hlaváč</author>
+  <authorEmail>info@bluepro.cz</authorEmail>
+  <authorUrl>http://bluepro.cz</authorUrl>
+  <copyright>Ondřej Hlaváč</copyright>
+  <license>GNU/GPL</license>
+  <version>1.0.0</version>
+  <description>Fio Bank account overview</description>
+
+  <update>
+    <schemas>
+      <schemapath type="mysql">sql/updates/mysql</schemapath>
+    </schemas>
+  </update>
+
+  <files folder="site">
+    <filename>index.html</filename>
+    <filename>fioexport.php</filename>
+    <filename>controller.php</filename>
+    <folder>views</folder>
+  </files>
+
+  <administration>
+    <menu>Fio Export</menu>
+    <files folder="admin">
+      <filename>index.html</filename>
+      <filename>fioexport.php</filename>
+      <folder>sql</folder>
+    </files>
+  </administration>
+
+</extension>
