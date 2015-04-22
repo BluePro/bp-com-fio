@@ -28,9 +28,12 @@
   <administration>
     <menu>Fio Export</menu>
     <files folder="admin">
+      <filename>config.xml</filename>
       <filename>index.html</filename>
       <filename>fioexport.php</filename>
+      <filename>controller.php</filename>
       <folder>sql</folder>
+      <folder>views</folder>
     </files>
   </administration>
 
