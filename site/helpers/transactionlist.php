@@ -12,7 +12,7 @@ class TransactionList extends ArrayIterator {
   private $dateEnd;
 
   public function __construct($accountId, $bankId, $currency, $iban, $bic, $openingBalance, $closingBalance, $dateStart, $dateEnd, array $transactionList) {
-    parent::_construct($transactionList);
+    parent::__construct($transactionList);
     
     $this->accountId = $accountId;
     $this->bankId = $bankId;

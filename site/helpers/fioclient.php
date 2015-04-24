@@ -17,7 +17,8 @@ class FioClient {
     $urlSegments = [$this->url, $action, $this->token];
     $urlSegments = array_merge($urlSegments, $params, [self::TYPE . '.' . self::FORMAT]);
     $url = implode('/', $urlSegments);
-    return json_decode(file_get_contents($url));
+		$data = file_get_contents($url);
+    return json_decode($data);
   }
 
 }

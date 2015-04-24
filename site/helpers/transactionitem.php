@@ -18,8 +18,6 @@ class TransactionItem {
   private $bic;
 
   public function __construct($idPohybu, $datum, $objem, $mena, $protiucet, $nazevProtiuctu, $kodBanky, $nazevBanky, $ks, $vs, $ss, $identifikace, $zprava, $typ, $bic) {
-    parent::_construct($transactionList);
-    
     $this->idPohybu = $idPohybu;
     $this->datum = $datum;
     $this->objem = $objem;

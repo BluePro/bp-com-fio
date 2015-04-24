@@ -2,10 +2,10 @@
 abstract class FioParser {
 
   public static function getTransactionList($data) {
-    $info = $data->AccountStatement->info;
+    $info = $data->accountStatement->info;
 
     $list = array();
-    foreach ($data->AccountStatement->TransactionList->transaction as $transaction) {
+    foreach ($data->accountStatement->transactionList->transaction as $transaction) {
       $list[] = self::getTransactionItem($transaction);
     }
 

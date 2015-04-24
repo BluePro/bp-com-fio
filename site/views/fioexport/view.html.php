@@ -2,12 +2,12 @@
 defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.view');
 
-class FioExportViewFioExport extends JView {
+class FioExportViewFioExport extends JViewLegacy {
 
   public function display($tpl = null) {
     $input = JFactory::getApplication()->input;
-    $dateFrom = $input->getString('dateFrom');
-    $dateTo = $input->get('dateTo');
+    $dateFrom = $input->getString('dateFrom', '2015-01-01');
+    $dateTo = $input->get('dateTo', '2015-01-31');
 
     $model = $this->getModel();
     $list = $model->getList($dateFrom, $dateTo);

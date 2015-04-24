@@ -1,8 +1,7 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
-jimport('joomla.application.component.controller');
 
-$controller = JController::getInstance('FioExport');
+$controller = JControllerLegacy::getInstance('FioExport');
 $input = JFactory::getApplication()->input;
 $controller->execute($input->getCmd('task'));
 $controller->redirect();

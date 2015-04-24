@@ -2,5 +2,5 @@
 defined('_JEXEC') or die('Restricted access');
 jimport('joomla.application.component.controller');
 
-class FioExportController extends JController {
+class FioExportController extends JControllerLegacy {
 }
