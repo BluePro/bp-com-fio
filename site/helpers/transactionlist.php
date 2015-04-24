@@ -26,39 +26,39 @@ class TransactionList extends ArrayIterator {
   }
 
   public function getAccountId() {
-    return $accountId;
+    return $this->accountId;
   }
 
   public function getBankId() {
-    return $bankId;
+    return $this->bankId;
   }
 
   public function getCurrency() {
-    return $currency;
+    return $this->currency;
   }
 
   public function getIban() {
-    return $iban;
+    return $this->iban;
   }
 
   public function getBic() {
-    return $bic;
+    return $this->bic;
   }
 
   public function getOpeningBalance() {
-    return $openingBalance;
+    return $this->openingBalance;
   }
 
   public function getClosingBalance() {
-    return $closingBalance;
+    return $this->closingBalance;
   }
 
   public function getDateStart() {
-    return $dateStart;
+    return $this->dateStart;
   }
 
   public function getDateEnd() {
-    return $dateEnd;
+    return $this->dateEnd;
   }
 
 }

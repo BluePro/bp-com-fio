@@ -68,7 +68,7 @@ abstract class FioParser {
         case 'Zpráva pro příjemce';
           $zprava = $column->value;
           break;
-        case 'Typ pohybu';
+        case 'Typ';
           $typ = $column->value;
           break;
         case 'BIC';
