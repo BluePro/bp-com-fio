@@ -20,7 +20,7 @@ class FioExportViewFioExport extends JViewLegacy {
 
     $this->dateFrom = $dateFrom;
     $this->dateTo = $dateTo;
-    $this->list = $list;
+    $this->transactionList = $list;
 
     parent::display($tpl);
   }

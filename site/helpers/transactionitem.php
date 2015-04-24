@@ -36,63 +36,63 @@ class TransactionItem {
   }
 
   public function getIdPohybu() {
-    return $idPohybu;
+    return $this->idPohybu;
   }
 
   public function getDatum() {
-    return $datum;
+    return $this->datum;
   }
 
   public function getObjem() {
-    return $objem;
+    return $this->objem;
   }
 
   public function getMena() {
-    return $mena;
+    return $this->mena;
   }
 
   public function getProtiucet() {
-    return $protiucet;
+    return $this->protiucet;
   }
 
   public function getNazevProtiuctu() {
-    return $nazevProtiuctu;
+    return $this->nazevProtiuctu;
   }
 
   public function getKodBanky() {
-    return $kodBanky;
+    return $this->kodBanky;
   }
 
   public function getNazevBanky() {
-    return $nazevBanky;
+    return $this->nazevBanky;
   }
 
   public function getKS() {
-    return $ks;
+    return $this->ks;
   }
 
   public function getVS() {
-    return $vs;
+    return $this->vs;
   }
 
   public function getSS() {
-    return $ss;
+    return $this->ss;
   }
 
   public function getIdentifikace() {
-    return $identifikace;
+    return $this->identifikace;
   }
 
   public function getZprava() {
-    return $zprava;
+    return $this->zprava;
   }
 
   public function getTyp() {
-    return $typ;
+    return $this->typ;
   }
 
   public function getBIC() {
-    return $bic;
+    return $this->bic;
   }
 
 }
