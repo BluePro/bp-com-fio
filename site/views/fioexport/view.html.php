@@ -9,8 +9,9 @@ class FioExportViewFioExport extends JViewLegacy {
     $dateFrom = $input->getString('dateFrom', '2015-01-01');
     $dateTo = $input->get('dateTo', '2015-01-31');
 
-    $model = $this->getModel();
-    $list = $model->getList($dateFrom, $dateTo);
+    $cache = JFactory::getCache();
+		$model = $this->getModel();
+    $list = $cache->call(array($model, 'getList'), $dateFrom, $dateTo);
 
     if ($errors = $this->get('Errors')) {
       JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
