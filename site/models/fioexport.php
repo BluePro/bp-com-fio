@@ -9,7 +9,9 @@ class FioExportModelFioExport extends JModelItem {
 
   public function __construct() {
     $params = JComponentHelper::getParams('com_fioexport');
+		$fioCache = new FioCache(JFactory::getDBO());
     $this->client = new FioClient(
+				$fioCache,
         $params->get('url'),
         $params->get('token'));
 

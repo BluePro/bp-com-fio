@@ -11,7 +11,8 @@ class FioExportViewFioExport extends JViewLegacy {
 
     $cache = JFactory::getCache();
 		$model = $this->getModel();
-    $list = $cache->call(array($model, 'getList'), $dateFrom, $dateTo);
+		$list = $model->getList($dateFrom, $dateTo);
+//    $list = $cache->call(array($model, 'getList'), $dateFrom, $dateTo);
 
     if ($errors = $this->get('Errors')) {
       JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
