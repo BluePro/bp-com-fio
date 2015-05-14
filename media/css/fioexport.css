@@ -1,0 +1,9 @@
+.com_fioexport .account,
+.com_fioexport .amount {
+	text-align: right;
+}
+
+.com_fioexport .date,
+.com_fioexport .amount {
+	white-space: nowrap;
+}

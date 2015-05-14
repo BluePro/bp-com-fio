@@ -25,6 +25,10 @@
     <folder>views</folder>
   </files>
 
+	<media destination="com_fioexport" folder="media">
+	  <folder>css</folder>
+	</media>
+
   <administration>
     <menu>Fio Export</menu>
     <files folder="admin">

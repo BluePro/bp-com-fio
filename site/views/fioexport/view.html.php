@@ -4,6 +4,10 @@ jimport('joomla.application.component.view');
 
 class FioExportViewFioExport extends JViewLegacy {
 
+	protected $dateFrom;
+	protected $dateTo;
+	protected $transactionList;
+
   public function display($tpl = null) {
     $app = JFactory::getApplication();
     $dateFrom = $app->getUserStateFromRequest('fioexport.dateFrom', 'dateFrom', $this->getDefaultDateFrom());
@@ -19,9 +23,11 @@ class FioExportViewFioExport extends JViewLegacy {
       return false;
     }
 
-    $this->dateFrom = $dateFrom;
+		$this->dateFrom = $dateFrom;
     $this->dateTo = $dateTo;
     $this->transactionList = $list;
+
+		JHtml::stylesheet('com_fioexport/fioexport.css', array(), true);
 
     parent::display($tpl);
   }
