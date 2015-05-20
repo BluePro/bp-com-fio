@@ -8,6 +8,7 @@ abstract class FioParser {
     foreach ($data->accountStatement->transactionList->transaction as $transaction) {
       $list[] = self::getTransactionItem($transaction);
     }
+		$list = array_reverse($list);
 
     return new TransactionList(
       $info->accountId,

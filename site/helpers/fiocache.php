@@ -11,7 +11,9 @@ class FioCache {
 		$response = $this->fromCache($request);
 		if (!$response) {
 			$response = call_user_func($callback, $request);
-			$this->toCache($request, $response);
+			if ($response) {
+				$this->toCache($request, $response);
+			}
 		}
     return $response;
   }
