@@ -1,5 +1,10 @@
 <?php
 defined('_JEXEC') or die('Restricted access');
+
+if (!JFactory::getUser()->authorise('core.view', 'com_fioexport')) {
+	return JError::raiseWarning(404, JText::_('JERROR_ALERTNOAUTHOR'));
+}
+
 JLoader::register('FioCache', __DIR__.'/helpers/fiocache.php');
 JLoader::register('FioClient', __DIR__.'/helpers/fioclient.php');
 JLoader::register('FioDate', __DIR__.'/helpers/fiodate.php');

@@ -10,7 +10,9 @@ class FioExportViewFioExport extends JViewLegacy {
   }
 
   private function addToolBar() {
-    JToolBarHelper::preferences('com_fioexport');
+		if (JFactory::getUser()->authorise('core.admin', 'com_fioexport')) {
+    	JToolBarHelper::preferences('com_fioexport');
+		}
   }
 
 }
