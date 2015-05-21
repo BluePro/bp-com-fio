@@ -1,5 +1,5 @@
 <?php defined('_JEXEC') or die('Restricted access'); ?>
-<h1>Fio export</h1>
+<h1><?php echo JText::_('COM_FIOEXPORT'); ?></h1>
 <div class="com_fioexport">
 <form action="<?php echo JRoute::_('index.php'); ?>" method="get">
 <table class="form">
