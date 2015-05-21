@@ -19,7 +19,7 @@ class FioExportModelFioExport extends JModelItem {
   }
 
   public function getList($dateFrom, $dateTo) {
-    $list = $this->client->call('periods', [FioDate::addDay($dateFrom), FioDate::addDay($dateTo)]);
+    $list = $this->client->call('periods', [$dateFrom, $dateTo]);
     return FioParser::getTransactionList($list);
   }
 

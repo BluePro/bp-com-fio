@@ -7,3 +7,15 @@
 .com_fioexport .amount {
 	white-space: nowrap;
 }
+
+.com_fioexport .filter {
+	margin-bottom: 2em;
+}
+
+.com_fioexport .expense .amount {
+  color: #ff0000;
+}
+
+.com_fioexport .income .amount {
+  color: #00ff00;
+}

@@ -18,8 +18,8 @@ abstract class FioParser {
       $info->bic,
       $info->openingBalance,
       $info->closingBalance,
-      $info->dateStart,
-      $info->dateEnd,
+      substr($info->dateStart, 0, 10),
+      substr($info->dateEnd, 0, 10),
       $list);
   }
 
