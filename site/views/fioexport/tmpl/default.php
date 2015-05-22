@@ -22,8 +22,8 @@ echo sprintf('<tr><th>Od:</th><td>%s</td><th>Do:</th><td>%s</td></tr>',
 $i = 0;
 foreach ($this->transactionList as $transaction) {
 	$i++;
-	echo sprintf('<tr class="%s %s"><td class="date">%s</td><td class="amount">%s</td><td class="account">%s%s%s</td><td class="vs">%s</td><td class="identification"">%s</td><td class="type">%s</td></tr>',
-			$i % 2 ? 'odd' : 'even', $transaction->getObjem() < 0 ? 'expense' : 'income', JHtml::date($transaction->getDatum(), 'j. F Y'), number_format($transaction->getObjem(), 2, ',', '&nbsp;'), $transaction->getProtiucet(), $transaction->getProtiucet() ? '/' : '', $transaction->getKodBanky(), $transaction->getVS(), $transaction->getIdentifikace(), $transaction->getTyp());
+	echo sprintf('<tr class="%s %s"><td class="date">%s</td><td class="amount">%s</td><td class="account">%s</td><td class="vs">%s</td><td class="identification"">%s</td><td class="type">%s</td></tr>',
+			$i % 2 ? 'odd' : 'even', $transaction->getObjem() < 0 ? 'expense' : 'income', JHtml::date($transaction->getDatum(), 'j. F Y'), number_format($transaction->getObjem(), 2, ',', '&nbsp;'), $transaction->getProtiucetAndKodBanky(), $transaction->getVS(), nl2br($transaction->getPopis()), $transaction->getTyp());
 }
 ?>
 </table>

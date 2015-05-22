@@ -95,4 +95,22 @@ class TransactionItem {
     return $this->bic;
   }
 
+	public function getPopis() {
+		if ($this->identifikace === $this->zprava) {
+			return $this->identifikace;
+		} else {
+			$popis = [];
+			if ($this->identifikace) $popis[] = $this->identifikace;
+			if ($this->zprava) $popis[] = $this->zprava;
+			return implode("\n", $popis);
+		}
+	}
+
+	public function getProtiucetAndKodBanky() {
+		$ucet = [];
+		if ($this->protiucet) $ucet[] = $this->protiucet;
+		if ($this->kodBanky) $ucet[] = $this->kodBanky;
+		return implode('/', $ucet);
+	}
+
 }
