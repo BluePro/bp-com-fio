@@ -20,17 +20,32 @@ class FioExportModelFioExport extends JModelItem {
 
   public function getList($dateFrom, $dateTo) {
     $list = $this->client->call('periods', [$dateFrom, $dateTo]);
-    return FioParser::getTransactionList($list);
+		if ($list) {
+	    return FioParser::getTransactionList($list);
+		} else {
+			$this->setError(JText::_('COM_FIOEXPORT_ERROR_NO_DATA'));
+			return false;
+		}
   }
 
   public function getById($year, $id) {
     $list = $this->client->call('by-id', [$year, $id]);
-    return FioParser::getTransactionList($list);
+		if ($list) {
+	    return FioParser::getTransactionList($list);
+		} else {
+			$this->setError(JText::_('COM_FIOEXPORT_ERROR_NO_DATA'));
+			return false;
+		}
   }
 
   public function getLast() {
     $list = $this->client->call('last', []);
-    return FioParser::getTransactionList($list);
+		if ($list) {
+    	return FioParser::getTransactionList($list);
+		} else {
+			$this->setError(JText::_('COM_FIOEXPORT_ERROR_NO_DATA'));
+			return false;
+		}
   }
 
 }

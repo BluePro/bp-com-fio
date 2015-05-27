@@ -23,6 +23,9 @@ class FioExportViewFioExport extends JViewLegacy {
 //    $list = $cache->call(array($model, 'getList'), $dateFrom, $dateTo);
 
     if ($errors = $this->get('Errors')) {
+			foreach ($errors as $error) {
+				$app->enqueueMessage($error, 'error');
+			}
       JLog::add(implode('<br />', $errors), JLog::WARNING, 'jerror');
       return false;
     }
