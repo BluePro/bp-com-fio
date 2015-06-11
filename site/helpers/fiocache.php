@@ -2,12 +2,15 @@
 class FioCache {
 
   private $db;
+	private $lifetime;
 
-	public function __construct($db) {
+	public function __construct($db, $lifetime) {
 		$this->db = $db;
+		$this->lifetime = $lifetime;
 	}
 	
 	public function get(callable $callback, $request) {
+		$this->clearCache($request);
 		$response = $this->fromCache($request);
 		if (!$response) {
 			$response = call_user_func($callback, $request);
@@ -37,6 +40,18 @@ class FioCache {
 			->columns($this->db->quoteName($columns))
 			->values(implode(',', $values));
 		$this->db->setQuery($query);
+		$this->db->execute();
+	}
+
+	private function clearCache($request) {
+		$query = $this->db->getQuery(true);
+		$conditions = array(
+				$this->db->quoteName('request') . '=' . $this->db->quote($request),
+				'TIMESTAMPDIFF(MINUTE, ' . $this->db->quoteName('time') . ', NOW()) > ' . $this->db->quote($this->lifetime));
+		$query
+				->delete($this->db->quoteName('#__fioexport_cache'))
+				->where($conditions);
+		$this->db->setQuery($query);    
 		$this->db->execute();
 	}
 
