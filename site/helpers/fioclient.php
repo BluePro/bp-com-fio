@@ -16,6 +16,12 @@ class FioClient {
 
   public function call($action, array $params) {
 		$url = $this->getUrl($action, $params);
+		$data = $this->request($url);
+    return json_decode($data);
+  }
+
+  public function callCached($action, array $params) {
+		$url = $this->getUrl($action, $params);
 		$data = $this->cache->get(array($this, 'request'), $url);
     return json_decode($data);
   }
