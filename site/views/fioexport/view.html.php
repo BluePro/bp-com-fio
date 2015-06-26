@@ -10,6 +10,8 @@ class FioExportViewFioExport extends JViewLegacy {
 
   public function display($tpl = null) {
     $app = JFactory::getApplication();
+    $showIncome = $app->getUserStateFromRequest('fioexport.showIncome', 'showIncome', true);
+    $showExpense = $app->getUserStateFromRequest('fioexport.showExpense', 'showExpense', true);
     $dateFrom = $app->getUserStateFromRequest('fioexport.dateFrom', 'dateFrom');
     $dateTo = $app->getUserStateFromRequest('fioexport.dateTo', 'dateTo');
 		if (!FioDate::isValidDateInterval($dateFrom, $dateTo)) {
@@ -30,6 +32,8 @@ class FioExportViewFioExport extends JViewLegacy {
       return false;
     }
 
+		$this->showIncome = $showIncome;
+		$this->showExpense = $showExpense;
 		$this->dateFrom = $dateFrom;
     $this->dateTo = $dateTo;
     $this->transactionList = $list;
